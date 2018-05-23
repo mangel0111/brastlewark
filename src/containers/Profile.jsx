@@ -6,6 +6,7 @@ import Header from '../containers/Header';
 import { authUser } from '../actions/account';
 import { fetchEvents } from '../actions/event';
 import DashboardPanel from '../components/DashboardPanel'; 
+import { getAuthUser } from '../utils/account-utils';
 
 const Box = styled.div`
 	background-color: #d9dce1;
@@ -48,19 +49,10 @@ const ProfileHeader = styled.div`
 
 export class Profile extends Component {
 	componentDidMount(){
-		const { dispatch } = this.props;
-		const id = window.sessionStorage.getItem('id');
-		if(!id){
-			window.location = '/login';
-		} else {
-			const auth = {
-				id
-			};
-			Object.keys(window.sessionStorage)
-				.forEach(key => auth[key] = window.sessionStorage.getItem(key));
-			dispatch(authUser(auth));
-			dispatch(fetchEvents({}));
-		}
+		const { dispatch } = this.props;        
+		const auth = getAuthUser();
+		dispatch(authUser(auth));
+		dispatch(fetchEvents({}));
 	}
     
 	render(){

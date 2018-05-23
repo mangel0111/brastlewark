@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Header from '../containers/Header';
 import { authUser } from '../actions/account';
 import { fetchEvents } from '../actions/event';
-
+import { getAuthUser } from '../utils/account-utils';
 import MagicBox from '../components/MagicBox';
 import DashboardPanel from '../components/DashboardPanel';
 
@@ -20,20 +20,12 @@ export class Dashboard extends Component {
 
 	componentDidMount(){
 		const { dispatch } = this.props;
-		const id = window.sessionStorage.getItem('id');
-		if(!id){
-			window.location = '/login';
-		} else {
-			const auth = {
-				id
-			};
-			Object.keys(window.sessionStorage)
-				.forEach(key => auth[key] = window.sessionStorage.getItem(key));
-			dispatch(authUser(auth));
-			dispatch(fetchEvents({
-				params: {}
-			}));
-		}
+		const auth = getAuthUser();
+		dispatch(authUser(auth));
+		dispatch(fetchEvents({
+			params: {}
+		}));
+		
 	}
 
 	render(){

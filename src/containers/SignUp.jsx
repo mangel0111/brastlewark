@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Header from '../containers/Header';
-import { loginUser } from '../actions/account';
+import { createUser } from '../actions/account';
 import phantomGray from '../assets/images/phantomGray.png';
 import Input from '../components/Input';
 import Button from '../components/Button';
@@ -54,27 +54,50 @@ const LoginPage = styled.div`
 `;
 
 
-export class Login extends Component {
+export class SignUp extends Component {
 	
 	constructor (props){
 		super(props);
 		this.state = {
 			email: '',
-			password: ''
+			firstName: '',
+			lastName: '',
+			password: '',
+			repeatPassword: '',
+			errors: []
 		};
 	}
 
-	login() {
+	signUp() {
 		const { dispatch } = this.props;
-		const {email, password} = this.state;
-		dispatch(loginUser({
-			data: {
-				email,
-				password
-			}
-		}));
+		const {email, password, firstName, lastName } = this.state;
+		const errors =  this.validate();
+		if(errors.length > 0) {
+			this.setState({ errors });
+		} else {
+			dispatch(createUser({
+				data: {
+					email,
+					password,
+					firstName,
+					lastName
+				}
+			}));
+		}
 	}
-    
+	
+	validate(){
+		const { password, repeatPassword} = this.state;
+		const errors = [];
+		if(password !== repeatPassword) {
+			errors.push({ key: 'repeatPassword', label: 'The password must match'});
+		}
+		if(repeatPassword === ''){
+			errors.push({ key: 'repeatPassword', label: 'The password has to be filled up'});
+		}
+		return errors;
+	}
+
 	checkAuth(){
 		const authId = window.sessionStorage.getItem('id');
 		if(authId){
@@ -84,11 +107,20 @@ export class Login extends Component {
     
 	render(){
 		const { error } = this.props;
+		const { errors } = this.state;
+		const errorsFiltered = [];
+		Object.keys(error).forEach(key => {
+			errorsFiltered.push({
+				key,
+				label: error[key].message 
+			});
+		});
 		this.checkAuth();
 		return (
 			<div>
 				<Header
 					light
+					signUp
 				/>
 				<Panel>
 					<Phantom>
@@ -98,7 +130,7 @@ export class Login extends Component {
 						error={error}
 					>
 						
-						<h1>Sign In to Eventio.</h1>
+						<h1>Get Started absolutely free.</h1>
 						{error ?
 							<p>Oops! That email and password combination is not valid.</p>
 							:
@@ -107,11 +139,26 @@ export class Login extends Component {
 						
 						<form autoComplete="off">
 							<Input 
+								value={this.state.firstName}
+								onChange={({ target })=> this.setState({firstName: target.value })} 
+								title="First name" 
+								autoComplete="off"
+								error={errorsFiltered.find(error => error.key === 'firstName')}
+								type="text"
+							/>	
+							<Input 
+								value={this.state.lastName}
+								onChange={({ target })=> this.setState({lastName: target.value })} 
+								title="Last name" 
+								autoComplete="off"
+								error={errorsFiltered.find(error => error.key === 'lastName')}
+								type="text"
+							/>	
+							<Input 
 								value={this.state.email}
-								onChange={({ target })=> {
-									this.setState({email: target.value });
-								}} 
+								onChange={({ target })=> this.setState({email: target.value })} 
 								title="Email" 
+								error={errorsFiltered.find(error => error.key === 'email')}
 								autoComplete="off"
 								type="email"
 							/>		
@@ -120,10 +167,19 @@ export class Login extends Component {
 								title="Password" 
 								type="password"
 								autoComplete="off"
+								error={errorsFiltered.find(error => error.key === 'password')}
 								onChange={({ target })=> this.setState({password: target.value })} 
 							/>
+							<Input 
+								value={this.state.repeatPassword}
+								title="Repeat Password" 
+								type="password"
+								autoComplete="off"
+								error={errors.find(error => error.key === 'repeatPassword')}
+								onChange={({ target })=> this.setState({repeatPassword: target.value })} 
+							/>
 						</form>
-						<div><Button onClick={()=> this.login()}>SIGN IN</Button></div>
+						<div><Button onClick={()=> this.signUp()}>SIGN UP</Button></div>
 					</LoginPage>
 				</Panel>
 			</div>
@@ -131,7 +187,7 @@ export class Login extends Component {
 	}
 }
 
-Login.propTypes = {
+SignUp.propTypes = {
 	authUser: PropTypes.object,
 	dispatch: PropTypes.func,
 	history: PropTypes.object,
@@ -143,5 +199,4 @@ export const mapStateToProps = (state) => ({
 	error: state.account.error
 });
 
-
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(SignUp);

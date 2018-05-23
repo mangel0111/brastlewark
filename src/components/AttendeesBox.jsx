@@ -9,6 +9,7 @@ const AttendeesBoxPanel = styled.div`
 	padding: 20px;
 	padding-bottom: 0;
 	max-width: 305px;
+	height: 280px;
 	border: 1px solid #fafafa;
 	box-shadow: 1px 2px #ececec;
 	flex: 1 100%;
@@ -27,6 +28,14 @@ const Attendees = styled.div`
 		padding: 7px 15px;
 		border-radius: 25px;
 	}
+
+	span {
+		color: #d4d7dd;
+		font-size: 13px;
+		margin: 0 5px 5px 0;
+		padding: 10px 0px;
+		border-radius: 25px;
+	}
 `;
 
 export class AttendeesBox extends Component {
@@ -36,8 +45,11 @@ export class AttendeesBox extends Component {
 			<AttendeesBoxPanel>
                 Attendes
 				<Attendees>
-					{attendees.map(attende => 
-						(<div key={attende.id}>{`${attende.firstName} ${attende.lastName}`}</div>))
+					{
+						attendees.length > 0 ? 
+							attendees.map(attende => 
+								(<div key={attende.id}>{`${attende.firstName} ${attende.lastName}`}</div>))
+							: <span>No Attendes for this event</span>
 					}
 				</Attendees>
 			</AttendeesBoxPanel>);

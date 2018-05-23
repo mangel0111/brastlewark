@@ -41,6 +41,9 @@ const ProfileInformation = styled.div`
     color: #b7b7b7;
 	padding: 0 30px;
 	cursor: pointer;
+	z-index: 9999;
+    position: absolute;
+    right: 10px;
 `;
 
 const Close = styled(ProfileInformation)`
@@ -65,10 +68,19 @@ const IconInitials = styled.span`
     margin-right: 10px;
 `;
 
+const Link = styled.a`
+	color: #7f7f7f;
+	margin-left: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	z-index: 99999;
+	text-decoration: none;
+`;
+
 export class Header extends Component {
 
 	render(){
-		const { authUser, light, backTo, canClose } = this.props;
+		const { authUser, light, backTo, canClose, signUp } = this.props;
 		let name = 'Don\'t\' have account?';
 		let initials = '';
 		let optionsVisible = false;
@@ -77,13 +89,18 @@ export class Header extends Component {
 			name = `${authUser.firstName} ${authUser.lastName}`;
 			initials = `${authUser.firstName.charAt(0)} ${authUser.lastName.charAt(0)}`;
 		}
+	
+		let href = '/SignUp';
+		if(signUp) {
+			href = '/login';
+		}
 		return (
 			<HeaderBar>
 				<Gradient />
 				<NavBar>
 					<Icon onClick={()=> window.location = '/'} light={light}>E.</Icon>
 					{
-						backTo && 
+						backTo && backTo.label &&
 						<BackTo
 							onClick={()=> window.location= backTo.url}
 						>
@@ -100,26 +117,30 @@ export class Header extends Component {
 							</Close>
 							:
 							<ProfileInformation
-								backTo={backTo}
-								onClick={()=> window.location='/profile'}
+								backTo={backTo && backTo.label}
 							>
-								{initials && <IconInitials>{initials}</IconInitials>}
-								{name}
+								{initials && <IconInitials onClick={()=> window.location='/profile'}>{initials}</IconInitials>}
+								<span onClick={()=> window.location='/profile'}>
+									{name}
+								</span>
+								{!authUser.firstName && <Link href={href}>{signUp ? 'SIGN IN': 'SIGN UP'}</Link>}
 								{
 									optionsVisible &&
 							<ContextMenu 
 								actions={[{
 									key:'logut',
 									label: 'Log Out',
-									onClick:()=> {
+									onClick:(e)=> {
+										e.stopPropagation();
 										window.sessionStorage.clear();
 										window.location = '/login';
 									}
 								}]}
-							/>
-								}
+							/>}	
 							</ProfileInformation>
+							
 					}
+					
 				</NavBar>
 			</HeaderBar>);
 	}
@@ -127,14 +148,16 @@ export class Header extends Component {
 
 Header.defaultProps ={
 	authUser: {},
-	light: false
+	light: false,
+	signUp: false
 };
 
 Header.propTypes = {
 	canClose: PropTypes.bool,
 	authUser: PropTypes.object,
 	light: PropTypes.bool,
-	backTo: PropTypes.string
+	backTo: PropTypes.object,
+	signUp: PropTypes.bool
 };
 
 export default Header;

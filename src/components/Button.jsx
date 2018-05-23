@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const ButtonForm = styled.button`
-    background-color: #22D585;
+    background-color: #22d486;
     border: none;
     color: white;
     padding: 15px 80px;

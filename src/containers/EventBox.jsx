@@ -37,7 +37,7 @@ const EventButton = styled.span`
 	cursor: pointer;
 	background-color: ${(props) => props.action};
 	border: none;
-	color: white;
+	color: ${props => props.label === 'Edit' ? 'gray': 'white'};
 	padding: 2px 20px;
 	text-align: center;
 	-webkit-text-decoration: none;
@@ -75,7 +75,8 @@ const Description = styled.h5`
     width: 220px;
     white-space: nowrap;
     overflow: hidden !important;
-    text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	
 `;
 
 const Author = styled.p`
@@ -87,20 +88,24 @@ const Attendee = styled.h5`
 	margin-left: 40px;
 `;
 
+const DescriptionBlock = styled.h5`
+	height: 45px;
+`;
+
 
 export class EventBox extends Component {
 	getBlock({ event }){
 		const { viewMode, enableRelocation = true } = this.props;
 		return (
 			<EventBoxPanel 
-				onClick={()=> enableRelocation ? window.location = `/event/${event.id}`: false}
+				onClick={()=> enableRelocation ? window.location = `/event/details/${event.id}`: false}
 				viewMode={viewMode}
 				key={event.id}
 			>
 				<DateEvent>{this.getDate(event)}</DateEvent>
 				<Name viewMode={viewMode}>{event.title}</Name>
 				{event.owner && <p>{`${event.owner.firstName} ${event.owner.lastName}`}</p>}
-				<h5>{event.description}</h5>
+				<DescriptionBlock>{event.description}</DescriptionBlock>
 				<h5>
 					<span>
 						<IconPeople src={profile} alt={'profile'}/> 
@@ -115,7 +120,7 @@ export class EventBox extends Component {
 		const { viewMode, enableRelocation = true } = this.props;
 		return (
 			<EventBoxPanel 
-				onClick={()=> enableRelocation ? window.location = `/event/${event.id}`: false}
+				onClick={()=> enableRelocation ? window.location = `/event/details/${event.id}`: false}
 				viewMode={viewMode} 
 				key={event.id}
 			>
@@ -137,20 +142,30 @@ export class EventBox extends Component {
     
 	getEventButton({ event }){
 		const { authUser, viewMode } = this.props;
-		let label = 'Join';
-		let action = '#4CAF50';
+		
+		let label = 'No Action';
+		let action = '';
+
+		if(event.attendees && event.attendees.length < event.capacity) {
+			label = 'Join';
+			action = '#4CAF50';
+		}
 		if(event.attendees  && event.attendees.find(attendee => attendee.id === authUser.id)){
 			label = 'Leave';
 			action = '#fc4482';
 		}
 		if(event.owner && event.owner.id === authUser.id) {
 			label = 'Edit';
-			action = '#FFFFFF';
+			action = '#dadce1';
+		}
+		if(label === 'No Action'){
+			return null;
 		}
 		return (
 			<EventButton 
 				viewMode={viewMode} 
 				action={action}
+				label={label}
 				onClick={(e)=> {
 					e.stopPropagation();
 					const{ dispatch }= this.props;
@@ -159,6 +174,7 @@ export class EventBox extends Component {
 						dispatch(attendEvent(event));
 						break;
 					case 'Edit':
+						window.location = `/event/edit/${event.id}`;
 						break;
 					case 'Leave':
 						dispatch(unattendEvent(event));

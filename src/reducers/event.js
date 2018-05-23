@@ -4,7 +4,8 @@ import { handleActions } from 'redux-actions';
 
 export const eventState = {
 	events: [],
-	event: {}
+	event: {},
+	errors: {}
 };
 
 export default handleActions({
@@ -15,5 +16,9 @@ export default handleActions({
 	EVENT_FETCHED: (state, { payload }) =>
 		Object.assign({}, state, {
 			event: payload
+		}),
+	EVENT_ERROR: (state, { payload }) =>
+		Object.assign({}, state, {
+			errors: payload
 		})
 }, eventState);

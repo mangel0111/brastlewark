@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import Header from './Header';
 import { authUser } from '../actions/account';
 import Input from '../components/Input';
@@ -22,7 +21,7 @@ const CreateBox = styled.div`
     padding-bottom: 0;
     border: 1px solid #fafafa;
     box-shadow: 1px 2px #ececec;
-    display: inline-block};
+    display: inline-block;
     text-align: center;
 
     h1 {
@@ -50,7 +49,12 @@ const CreateBox = styled.div`
             margin: 20px auto 40px auto;
         }
     }
+`;
 
+const ErrorLabel = styled.p`
+    color: #ff6297 !important;
+    margin-bottom: 20px !important;
+    font-size: 14px !important;
 `;
 
 export class CreateEvent extends Component {
@@ -108,6 +112,9 @@ export class CreateEvent extends Component {
     
 	render(){
 		const { errors } = this.state;
+		const { eventErrors } = this.props;
+		const errorsToDisplay = [];
+		Object.keys(eventErrors).forEach(key =>errorsToDisplay.push(eventErrors[key]));
 		return (
 			<div>
 				<Header
@@ -117,27 +124,32 @@ export class CreateEvent extends Component {
 					<CreateBox>
 						<h1>Create new event</h1>
 						<p>Enter details below</p>
+						{errorsToDisplay && errorsToDisplay.length > 0 && errorsToDisplay.map(errorToDisplay => 
+							<ErrorLabel key={errorsToDisplay.path} >
+								{`${errorToDisplay.message[0].toUpperCase()}${errorToDisplay.message.slice(1)}`}
+							</ErrorLabel>)
+						}
 						<div>
 							<Input
+								value={this.state.title}
 								onChange={({target})=> this.setState({ title : target.value})}
-								placeholder="Title" 
+								title="Title" 
 								error={errors.find(error => error.key === 'title')}
 							/>
 							<Input 
+								value={this.state.description}
 								onChange={({target})=> this.setState({ description : target.value})}
-								placeholder="Description" 
+								title="Description" 
 								error={errors.find(error => error.key === 'description')}
 							/>
 							<Input 
 								type="date"
 								onChange={({target})=> this.setState({ date : target.value})}
-								placeholder="Date" 
 								error={errors.find(error => error.key === 'date')}
 							/>
 							<Input 
 								type="time"
 								onChange={({target})=> this.setState({ time : target.value})}
-								placeholder="Time" 
 								error={errors.find(error => error.key === 'time')}
 							/>
 							<Input 
@@ -145,7 +157,7 @@ export class CreateEvent extends Component {
 								min='0'
 								max='1000'
 								onChange={({target})=> this.setState({ capacity : target.value})}
-								placeholder="Capacity" 
+								title="Capacity" 
 								error={errors.find(error => error.key === 'capacity')}
 							/>
 							<Button onClick={()=> this.saveEvent()}> CREATE NEW EVENT </Button>
@@ -159,12 +171,14 @@ export class CreateEvent extends Component {
 
 CreateEvent.propTypes = {
 	authUser: PropTypes.object,
-	dispatch: PropTypes.func
+	dispatch: PropTypes.func,
+	eventErrors: PropTypes.object
 };
 
 
 export const mapStateToProps = (state) => ({
-	authUser: state.account.authUser
+	authUser: state.account.authUser,
+	eventErrors: state.event.errors
 });
 
 export default connect(mapStateToProps)(CreateEvent);

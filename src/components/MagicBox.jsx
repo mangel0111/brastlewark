@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Box = styled.div`
-	background-color: #2c353d;
+	background-color: ${props => props.isAction ? '#22D585' :'#2c353d'};
     color: white;
     position: fixed;
 	bottom: 25px;
@@ -17,12 +17,13 @@ const Box = styled.div`
 
 export class MagicBox extends Component {
 	render(){
-		const { action = {} } = this.props;
-		return (<Box onClick={action.action}>{action.label}</Box>);
+		const { action = {}, isAction = false } = this.props;
+		return (<Box isAction={isAction} onClick={action.action}>{action.label}</Box>);
 	}
 }
 
 MagicBox.propTypes = {
+	isAction: PropTypes.bool,
 	action: PropTypes.object
 };
 

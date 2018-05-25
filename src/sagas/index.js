@@ -1,7 +1,5 @@
-import watchAccount from './account';
-import watchEvent from './event';
+import watchGnomes from './gnomes';
 
 export default {
-	...watchAccount,
-	...watchEvent
+	...watchGnomes
 };

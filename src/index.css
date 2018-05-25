@@ -29,42 +29,6 @@
   src: url('./assets/fonts/Hind/Hind-SemiBold.ttf')
 }
 
-@font-face {
-  font-family: 'PlayfairDisplay-Black';
-  font-style: normal;
-  font-weight: 900;
-  src: url('./assets/fonts/Playfair_Display/PlayfairDisplay-Black.ttf')
-}
-@font-face {
-  font-family: 'PlayfairDisplay-BlackItalic';
-  font-style: italic;
-  font-weight: 900;
-  src: url('./assets/fonts/Playfair_Display/PlayfairDisplay-BlackItalic.ttf')
-}
-@font-face {
-  font-family: 'PlayfairDisplay-Bold';
-  font-style: normal;
-  font-weight: 700;
-  src: url('./assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf') 
-}
-@font-face {
-  font-family: 'PlayfairDisplay-BoldItalic';
-  font-style: italic;
-  font-weight: 700;
-  src: url('./assets/fonts/Playfair_Display/PlayfairDisplay-BoldItalic.ttf') 
-}
-@font-face {
-  font-family: 'PlayfairDisplay-Italic';
-  font-style: italic;
-  font-weight: 400;
-  src: url('./assets/fonts/Playfair_Display/PlayfairDisplay-Italic.ttf')
-}
-@font-face {
-  font-family: 'PlayfairDisplay-Regular';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf')
-}
 
 body {
   margin: 0;

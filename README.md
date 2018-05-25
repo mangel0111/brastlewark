@@ -2,7 +2,7 @@
 Web site to manage gnomes.
 
 #### TODO:
-- [ ] Dashboard Page
-- [ ] Filter gnomes
-- [ ] Detail gnomes
-- [ ] Unit test
+- [x] Dashboard Page
+- [x] Filter gnomes
+- [x] Detail gnomes
+- [x] Unit test

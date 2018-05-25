@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from '../containers/Header';
+import Header from '../components/Header';
 import { fetchGnomes } from '../actions/gnomes';
 import DashboardPanel from '../components/DashboardPanel';
 
@@ -11,8 +11,7 @@ export class Dashboard extends Component {
 		const { dispatch } = this.props;
 		dispatch(fetchGnomes({
 			params: {}
-		}));
-		
+		}));	
 	}
 
 	render(){

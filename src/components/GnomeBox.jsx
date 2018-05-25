@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import ImageBox from '../components/ImageBox';
 
 const GnomeBoxPanel = styled.div`
 	font-family: 'Hind-Regular';
@@ -14,7 +14,8 @@ const GnomeBoxPanel = styled.div`
 	box-shadow: 1px 2px #ececec;
 	flex: 1 100%;
 	text-align: center;
-	
+	cursor: pointer;
+
 	p {
 		margin: 0;
 		font-size: 12px;
@@ -29,25 +30,11 @@ const GnomeBoxPanel = styled.div`
 	}
 `;
 
-
 const Name = styled.div`
 	width: 300px;
 	font-size: 16px;
+	margin: 20px 0;
 `;
-
-const DescriptionBlock = styled.h5`
-	span {
-		padding-right: 10px;
-		color: #4a4949;
-	}
-`;
-
-const Image = styled.img`
-	width: 200px;
-	height: 200px;
-	border-radius: 50%;
-`;
-
 
 export class GnomeBox extends Component {
 	getBlock({ gnome }){
@@ -56,13 +43,8 @@ export class GnomeBox extends Component {
 				onClick={()=> window.location = `/gnomes/${gnome.id}`}
 				key={gnome.id}
 			>
-				<Image src={gnome.thumbnail} alt={`Profile: ${gnome.name}`}/>
+				<ImageBox src={gnome.thumbnail} alt={`Profile: ${gnome.name}`}/>
 				<Name>{gnome.name}</Name>
-				{
-					false && <div><DescriptionBlock><span>Age</span>{gnome.age}</DescriptionBlock>
-						<DescriptionBlock><span>Weight</span>{gnome.weight}</DescriptionBlock>
-						<DescriptionBlock><span>Height</span>{gnome.height}</DescriptionBlock></div>
-				}
 			</GnomeBoxPanel>);
 	}
     
@@ -77,4 +59,4 @@ GnomeBox.propTypes = {
 	dispatch: PropTypes.func
 };
 
-export default connect()(GnomeBox);
+export default GnomeBox;

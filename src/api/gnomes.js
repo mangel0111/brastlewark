@@ -5,6 +5,7 @@ export const fetchGnomes = () =>{
 	return fetchApi(gnomesUrl, {
 		headers: {
 			'content-type': 'text/plain; charset=utf-8'
-		}
+		},
+		cache: 'force-cache'
 	});
 };

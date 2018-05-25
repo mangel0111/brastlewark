@@ -3,6 +3,7 @@ import queryString from 'query-string';
 export const fetchApi = (url, {
 	method = 'GET',
 	params,
+	cache= 'no-cache',
 	headers = {
 		'content-type': 'application/json'
 	},
@@ -13,7 +14,7 @@ export const fetchApi = (url, {
 	
 	return fetch(`${url}${paramText}`, {
 		body: JSON.stringify(data),
-		cache: 'no-cache',
+		cache,
 		headers,
 		method, // *GET, POST, PUT, DELETE, etc.
 	}).then(response => {

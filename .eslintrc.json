@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
@@ -13,6 +14,19 @@
             "jsx": true
         },
         "sourceType": "module"
+    },
+    "settings": {
+        "import/resolver": {
+        "webpack": {
+            "config": "./webpack.config.js"
+            },
+          "node": {
+            "extensions": [
+              ".js",
+              ".jsx"
+            ]
+          }
+        }
     },
     "plugins": [
         "react"

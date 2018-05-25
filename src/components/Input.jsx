@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import iconEye from '../assets/images/icon-show.png';
 
 const InputForm = styled.input`
-    width: 300px;
+    width: ${props => props.width ? props.width : '300px'};
     height: 25px;
     padding: 5px 30px 5px 5px;
     border: none;
@@ -12,6 +12,7 @@ const InputForm = styled.input`
     color: #4d555e;
     border-bottom: 1px solid ${(props) => props.error ? '#f56161': '#cac9c9'};
     z-index: 9999;
+    position: relative;
 
     &:focus {
         outline: none;
@@ -29,12 +30,6 @@ const InputForm = styled.input`
     &:-webkit-autofill{
         -webkit-box-shadow: 0 0 0 30px #f9f9fc inset !important;
     }
-`;
-
-const LabelError = styled.div`
-    text-align: left;
-    color: #f56161;
-    font-size: 14px;
 `;
 
 const LabelTitle = styled.label`
@@ -61,7 +56,7 @@ export class Input extends Component {
 		};
 	}
 	render(){
-		const { error, title, value, type } = this.props;
+		const { title, value, isFilter } = this.props;
 		return(
 			<div>
 				{title && <LabelTitle value={value} isFocus={this.state.focus}>{title}</LabelTitle>}
@@ -70,8 +65,7 @@ export class Input extends Component {
 					onBlur={()=> this.setState({ focus: false })}
 					{...this.props}
 				/>
-				{type === 'password' && <IconInput><img src={iconEye} alt="icon-eye" /></IconInput> }
-				{error && <LabelError>{error.label}</LabelError>}
+				{isFilter && <IconInput><img src={iconEye} alt="icon-eye" /></IconInput> }
 			</div>);
 		
 	}
@@ -81,7 +75,7 @@ Input.propTypes = {
 	error: PropTypes.object,
 	title: PropTypes.string,
 	value: PropTypes.string,
-	type: PropTypes.string
+	isFilter: PropTypes.bool
 };
 
 export default Input;

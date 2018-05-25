@@ -22,8 +22,6 @@ const Gradient = styled.div`
     height: 20px;
 `;
 
-
-
 export class Header extends Component {
 
 	render(){

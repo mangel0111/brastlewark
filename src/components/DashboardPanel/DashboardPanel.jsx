@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import GnomeBox from './GnomeBox';
 import PropTypes from 'prop-types';
-import Input from './Input';
+import styled from 'styled-components';
+import GnomeBox from '../GnomeBox';
+import Input from '../Input';
 
 const Dashboard = styled.div`
 	margin: 60px 5%;

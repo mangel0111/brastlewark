@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import iconEye from '../assets/images/icon-show.png';
+import iconEye from '../../assets/images/icon-show.png';
 
 const InputForm = styled.input`
     width: ${props => props.width ? props.width : '300px'};

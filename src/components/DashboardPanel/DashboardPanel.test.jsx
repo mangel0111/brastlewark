@@ -1,11 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import DashboardPanel from 'components/DashboardPanel';
-import GnomeBox from 'components/GnomeBox';
-import Input from 'components/Input';
+import DashboardPanel from './DashboardPanel';
+import GnomeBox from '../GnomeBox';
+import Input from '..//Input';
 
 let props = {
-
 };
 
 describe('Dashboard Panel', ()=> {
@@ -23,7 +22,11 @@ describe('Dashboard Panel', ()=> {
 				{'id':9,'name':'Kinthony Nozzlebooster','thumbnail':'http://www.publicdomainpictures.net/pictures/20000/nahled/baby-lamb.jpg','age':233,'weight':41.024612,'height':113.56545,'hair_color':'Red','professions':['Smelter','Miner','Tax inspector','Carpenter'],'friends':['Zedkin Clankstorque','Midwig Magnarivet']}]
 		};
 	});
-	it('render dashboard panel',()=> {
+	it('should match snaptshot dashboard', () => {
+		const dashboardPanel = mount(<DashboardPanel gnomes={[]} />);
+		expect(dashboardPanel).toMatchSnapshot();
+	});
+	it('should render dashboard panel',()=> {
 		// Mount Dashboard with none list of gnomes
 		const dashboardPanel = mount(<DashboardPanel gnomes={[]}/>);
 		expect(dashboardPanel.find(GnomeBox).length).toEqual(0);

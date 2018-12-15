@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard Panel should match snaptshot dashboard 1`] = `
+<DashboardPanel
+  gnomes={Array []}
+>
+  <styled.div>
+    <div
+      className="sc-bZQynM jHEtgA"
+    >
+      <styled.div>
+        <div
+          className="sc-gzVnrw iafrbi"
+        >
+          <styled.h1>
+            <h1
+              className="sc-dnqmqq duadTi"
+            >
+              Gnomes
+            </h1>
+          </styled.h1>
+          <styled.div>
+            <div
+              className="sc-iwsKbI gibJRB"
+            >
+              <Input
+                isFilter={true}
+                onChange={[Function]}
+                title="Filter"
+                type="text"
+                value=""
+                width="150px"
+              >
+                <div>
+                  <styled.label
+                    isFocus={false}
+                    value=""
+                  >
+                    <label
+                      className="sc-ifAKCX kUrIem"
+                      value=""
+                    >
+                      Filter
+                    </label>
+                  </styled.label>
+                  <styled.input
+                    isFilter={true}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    title="Filter"
+                    type="text"
+                    value=""
+                    width="150px"
+                  >
+                    <input
+                      className="sc-bxivhb gKxlOL"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      title="Filter"
+                      type="text"
+                      value=""
+                      width="150px"
+                    />
+                  </styled.input>
+                  <styled.i>
+                    <i
+                      className="sc-EHOje bvuGKU"
+                    >
+                      <img
+                        alt="icon-eye"
+                        src="icon-show.png"
+                      />
+                    </i>
+                  </styled.i>
+                </div>
+              </Input>
+            </div>
+          </styled.div>
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="sc-htoDjs WBmwY"
+        >
+          <p>
+            No gnome to display
+          </p>
+        </div>
+      </styled.div>
+    </div>
+  </styled.div>
+</DashboardPanel>
+`;

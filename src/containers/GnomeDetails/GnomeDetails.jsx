@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
-import ImageBox from '../components/ImageBox';
-import { fetchGnome } from '../actions/gnomes';
+import Header from '../../components/Header';
+import ImageBox from '../../components/ImageBox';
+import { fetchGnome } from '../../actions/gnomes';
 
 const ProfileHeader = styled.div`
     font-family: 'Hind-Regular';

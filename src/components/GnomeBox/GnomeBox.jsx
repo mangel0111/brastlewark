@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ImageBox from '../components/ImageBox';
+import ImageBox from '../ImageBox';
 
 const GnomeBoxPanel = styled.div`
 	font-family: 'Hind-Regular';

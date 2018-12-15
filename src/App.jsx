@@ -9,11 +9,11 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Loading />
 				<Switch>
 					<Route exact path='/' component={Dashboard}/>
 					<Route exact path='/gnomes/:id' component={GnomesDetail}/>
 				</Switch>
+				<Loading />
 			</div>
 		);
 	}

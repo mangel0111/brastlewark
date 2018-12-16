@@ -2,7 +2,189 @@
 
 exports[`Dashboard Panel should match snaptshot dashboard 1`] = `
 <DashboardPanel
-  gnomes={Array []}
+  gnomes={
+    Array [
+      Object {
+        "age": 306,
+        "friends": Array [
+          "Cogwitz Chillwidget",
+          "Tinadette Chillbuster",
+        ],
+        "hair_color": "Pink",
+        "height": 107.75835,
+        "id": 0,
+        "name": "Tobus Quickwhistle",
+        "professions": Array [
+          "Metalworker",
+          "Woodcarver",
+          "Stonecarver",
+          " Tinker",
+          "Tailor",
+          "Potter",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg",
+        "weight": 39.065952,
+      },
+      Object {
+        "age": 288,
+        "friends": Array [],
+        "hair_color": "Green",
+        "height": 110.43628,
+        "id": 1,
+        "name": "Fizkin Voidbuster",
+        "professions": Array [
+          "Brewer",
+          "Medic",
+          "Prospector",
+          "Gemcutter",
+          "Mason",
+          "Tailor",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/120000/nahled/white-hen.jpg",
+        "weight": 35.279167,
+      },
+      Object {
+        "age": 166,
+        "friends": Array [
+          "Fizwood Voidtossle",
+        ],
+        "hair_color": "Red",
+        "height": 106.14395,
+        "id": 2,
+        "name": "Malbin Chromerocket",
+        "professions": Array [
+          "Cook",
+          "Baker",
+          "Miner",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/30000/nahled/maple-leaves-background.jpg",
+        "weight": 35.88665,
+      },
+      Object {
+        "age": 240,
+        "friends": Array [
+          "Sarabink Tinkbuster",
+          "Tinadette Wrongslicer",
+        ],
+        "hair_color": "Red",
+        "height": 127.88554,
+        "id": 3,
+        "name": "Midwig Gyroslicer",
+        "professions": Array [
+          "Carpenter",
+          "Farmer",
+          "Stonecarver",
+          "Brewer",
+          "Tax inspector",
+          "Prospector",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg",
+        "weight": 40.97596,
+      },
+      Object {
+        "age": 89,
+        "friends": Array [
+          "Fizkin Fussslicer",
+          "Cogwitz Chillwidget",
+        ],
+        "hair_color": "Black",
+        "height": 101.6974,
+        "id": 4,
+        "name": "Malbin Magnaweaver",
+        "professions": Array [
+          "Smelter",
+          " Tinker",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/zebra-head-11281366876AZ3M.jpg",
+        "weight": 43.506973,
+      },
+      Object {
+        "age": 273,
+        "friends": Array [
+          "Libalia Quickbooster",
+          "Whitwright Mystwhistle",
+        ],
+        "hair_color": "Red",
+        "height": 91.54829,
+        "id": 5,
+        "name": "Zedkin Quickbuster",
+        "professions": Array [
+          "Cook",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/1-1193219094.jpg",
+        "weight": 38.742382,
+      },
+      Object {
+        "age": 212,
+        "friends": Array [
+          "Ecki Gyrobuster",
+          "Zedkin Nozzlespackle",
+          "Milli Clankswhistle",
+          "Libalia Magnatink",
+        ],
+        "hair_color": "Green",
+        "height": 98.701645,
+        "id": 6,
+        "name": "Emmadette Gimbalpower",
+        "professions": Array [
+          "Mason",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/20000/nahled/stingray.jpg",
+        "weight": 40.681095,
+      },
+      Object {
+        "age": 85,
+        "friends": Array [
+          "Libalia Mystbooster",
+          "Zedkin Gyrotorque",
+        ],
+        "hair_color": "Red",
+        "height": 96.0678,
+        "id": 7,
+        "name": "Twizzle Chrometossle",
+        "professions": Array [
+          "Baker",
+          "Brewer",
+          "Tax inspector",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg",
+        "weight": 38.953087,
+      },
+      Object {
+        "age": 186,
+        "friends": Array [],
+        "hair_color": "Gray",
+        "height": 118.27941,
+        "id": 8,
+        "name": "Malbert Tinkbuster",
+        "professions": Array [
+          "Baker",
+          "Mason",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/velka/1-1248161543llOC.jpg",
+        "weight": 41.159805,
+      },
+      Object {
+        "age": 233,
+        "friends": Array [
+          "Zedkin Clankstorque",
+          "Midwig Magnarivet",
+        ],
+        "hair_color": "Red",
+        "height": 113.56545,
+        "id": 9,
+        "name": "Kinthony Nozzlebooster",
+        "professions": Array [
+          "Smelter",
+          "Miner",
+          "Tax inspector",
+          "Carpenter",
+        ],
+        "thumbnail": "http://www.publicdomainpictures.net/pictures/20000/nahled/baby-lamb.jpg",
+        "weight": 41.024612,
+      },
+    ]
+  }
 >
   <styled.div>
     <div
@@ -84,9 +266,565 @@ exports[`Dashboard Panel should match snaptshot dashboard 1`] = `
         <div
           className="sc-htoDjs WBmwY"
         >
-          <p>
-            No gnome to display
-          </p>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 306,
+                "friends": Array [
+                  "Cogwitz Chillwidget",
+                  "Tinadette Chillbuster",
+                ],
+                "hair_color": "Pink",
+                "height": 107.75835,
+                "id": 0,
+                "name": "Tobus Quickwhistle",
+                "professions": Array [
+                  "Metalworker",
+                  "Woodcarver",
+                  "Stonecarver",
+                  " Tinker",
+                  "Tailor",
+                  "Potter",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg",
+                "weight": 39.065952,
+              }
+            }
+            key="0"
+          >
+            <styled.div
+              key="0"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Tobus Quickwhistle"
+                  src="http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Tobus Quickwhistle"
+                    src="http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg"
+                  >
+                    <img
+                      alt="Profile: Tobus Quickwhistle"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Tobus Quickwhistle
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 288,
+                "friends": Array [],
+                "hair_color": "Green",
+                "height": 110.43628,
+                "id": 1,
+                "name": "Fizkin Voidbuster",
+                "professions": Array [
+                  "Brewer",
+                  "Medic",
+                  "Prospector",
+                  "Gemcutter",
+                  "Mason",
+                  "Tailor",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/120000/nahled/white-hen.jpg",
+                "weight": 35.279167,
+              }
+            }
+            key="1"
+          >
+            <styled.div
+              key="1"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Fizkin Voidbuster"
+                  src="http://www.publicdomainpictures.net/pictures/120000/nahled/white-hen.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Fizkin Voidbuster"
+                    src="http://www.publicdomainpictures.net/pictures/120000/nahled/white-hen.jpg"
+                  >
+                    <img
+                      alt="Profile: Fizkin Voidbuster"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/120000/nahled/white-hen.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Fizkin Voidbuster
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 166,
+                "friends": Array [
+                  "Fizwood Voidtossle",
+                ],
+                "hair_color": "Red",
+                "height": 106.14395,
+                "id": 2,
+                "name": "Malbin Chromerocket",
+                "professions": Array [
+                  "Cook",
+                  "Baker",
+                  "Miner",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/30000/nahled/maple-leaves-background.jpg",
+                "weight": 35.88665,
+              }
+            }
+            key="2"
+          >
+            <styled.div
+              key="2"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Malbin Chromerocket"
+                  src="http://www.publicdomainpictures.net/pictures/30000/nahled/maple-leaves-background.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Malbin Chromerocket"
+                    src="http://www.publicdomainpictures.net/pictures/30000/nahled/maple-leaves-background.jpg"
+                  >
+                    <img
+                      alt="Profile: Malbin Chromerocket"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/30000/nahled/maple-leaves-background.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Malbin Chromerocket
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 240,
+                "friends": Array [
+                  "Sarabink Tinkbuster",
+                  "Tinadette Wrongslicer",
+                ],
+                "hair_color": "Red",
+                "height": 127.88554,
+                "id": 3,
+                "name": "Midwig Gyroslicer",
+                "professions": Array [
+                  "Carpenter",
+                  "Farmer",
+                  "Stonecarver",
+                  "Brewer",
+                  "Tax inspector",
+                  "Prospector",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg",
+                "weight": 40.97596,
+              }
+            }
+            key="3"
+          >
+            <styled.div
+              key="3"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Midwig Gyroslicer"
+                  src="http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Midwig Gyroslicer"
+                    src="http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg"
+                  >
+                    <img
+                      alt="Profile: Midwig Gyroslicer"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Midwig Gyroslicer
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 89,
+                "friends": Array [
+                  "Fizkin Fussslicer",
+                  "Cogwitz Chillwidget",
+                ],
+                "hair_color": "Black",
+                "height": 101.6974,
+                "id": 4,
+                "name": "Malbin Magnaweaver",
+                "professions": Array [
+                  "Smelter",
+                  " Tinker",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/zebra-head-11281366876AZ3M.jpg",
+                "weight": 43.506973,
+              }
+            }
+            key="4"
+          >
+            <styled.div
+              key="4"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Malbin Magnaweaver"
+                  src="http://www.publicdomainpictures.net/pictures/10000/nahled/zebra-head-11281366876AZ3M.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Malbin Magnaweaver"
+                    src="http://www.publicdomainpictures.net/pictures/10000/nahled/zebra-head-11281366876AZ3M.jpg"
+                  >
+                    <img
+                      alt="Profile: Malbin Magnaweaver"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/10000/nahled/zebra-head-11281366876AZ3M.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Malbin Magnaweaver
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 273,
+                "friends": Array [
+                  "Libalia Quickbooster",
+                  "Whitwright Mystwhistle",
+                ],
+                "hair_color": "Red",
+                "height": 91.54829,
+                "id": 5,
+                "name": "Zedkin Quickbuster",
+                "professions": Array [
+                  "Cook",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/1-1193219094.jpg",
+                "weight": 38.742382,
+              }
+            }
+            key="5"
+          >
+            <styled.div
+              key="5"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Zedkin Quickbuster"
+                  src="http://www.publicdomainpictures.net/pictures/10000/nahled/1-1193219094.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Zedkin Quickbuster"
+                    src="http://www.publicdomainpictures.net/pictures/10000/nahled/1-1193219094.jpg"
+                  >
+                    <img
+                      alt="Profile: Zedkin Quickbuster"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/10000/nahled/1-1193219094.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Zedkin Quickbuster
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 212,
+                "friends": Array [
+                  "Ecki Gyrobuster",
+                  "Zedkin Nozzlespackle",
+                  "Milli Clankswhistle",
+                  "Libalia Magnatink",
+                ],
+                "hair_color": "Green",
+                "height": 98.701645,
+                "id": 6,
+                "name": "Emmadette Gimbalpower",
+                "professions": Array [
+                  "Mason",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/20000/nahled/stingray.jpg",
+                "weight": 40.681095,
+              }
+            }
+            key="6"
+          >
+            <styled.div
+              key="6"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Emmadette Gimbalpower"
+                  src="http://www.publicdomainpictures.net/pictures/20000/nahled/stingray.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Emmadette Gimbalpower"
+                    src="http://www.publicdomainpictures.net/pictures/20000/nahled/stingray.jpg"
+                  >
+                    <img
+                      alt="Profile: Emmadette Gimbalpower"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/20000/nahled/stingray.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Emmadette Gimbalpower
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 85,
+                "friends": Array [
+                  "Libalia Mystbooster",
+                  "Zedkin Gyrotorque",
+                ],
+                "hair_color": "Red",
+                "height": 96.0678,
+                "id": 7,
+                "name": "Twizzle Chrometossle",
+                "professions": Array [
+                  "Baker",
+                  "Brewer",
+                  "Tax inspector",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg",
+                "weight": 38.953087,
+              }
+            }
+            key="7"
+          >
+            <styled.div
+              key="7"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Twizzle Chrometossle"
+                  src="http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Twizzle Chrometossle"
+                    src="http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg"
+                  >
+                    <img
+                      alt="Profile: Twizzle Chrometossle"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/10000/nahled/1-1275919724d1Oh.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Twizzle Chrometossle
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 186,
+                "friends": Array [],
+                "hair_color": "Gray",
+                "height": 118.27941,
+                "id": 8,
+                "name": "Malbert Tinkbuster",
+                "professions": Array [
+                  "Baker",
+                  "Mason",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/10000/velka/1-1248161543llOC.jpg",
+                "weight": 41.159805,
+              }
+            }
+            key="8"
+          >
+            <styled.div
+              key="8"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Malbert Tinkbuster"
+                  src="http://www.publicdomainpictures.net/pictures/10000/velka/1-1248161543llOC.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Malbert Tinkbuster"
+                    src="http://www.publicdomainpictures.net/pictures/10000/velka/1-1248161543llOC.jpg"
+                  >
+                    <img
+                      alt="Profile: Malbert Tinkbuster"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/10000/velka/1-1248161543llOC.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Malbert Tinkbuster
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
+          <GnomeBox
+            gnome={
+              Object {
+                "age": 233,
+                "friends": Array [
+                  "Zedkin Clankstorque",
+                  "Midwig Magnarivet",
+                ],
+                "hair_color": "Red",
+                "height": 113.56545,
+                "id": 9,
+                "name": "Kinthony Nozzlebooster",
+                "professions": Array [
+                  "Smelter",
+                  "Miner",
+                  "Tax inspector",
+                  "Carpenter",
+                ],
+                "thumbnail": "http://www.publicdomainpictures.net/pictures/20000/nahled/baby-lamb.jpg",
+                "weight": 41.024612,
+              }
+            }
+            key="9"
+          >
+            <styled.div
+              key="9"
+              onClick={[Function]}
+            >
+              <div
+                className="sc-bwzfXH damcWh"
+                onClick={[Function]}
+              >
+                <ImageBox
+                  alt="Profile: Kinthony Nozzlebooster"
+                  src="http://www.publicdomainpictures.net/pictures/20000/nahled/baby-lamb.jpg"
+                >
+                  <styled.img
+                    alt="Profile: Kinthony Nozzlebooster"
+                    src="http://www.publicdomainpictures.net/pictures/20000/nahled/baby-lamb.jpg"
+                  >
+                    <img
+                      alt="Profile: Kinthony Nozzlebooster"
+                      className="sc-bdVaJa fHHAPP"
+                      src="http://www.publicdomainpictures.net/pictures/20000/nahled/baby-lamb.jpg"
+                    />
+                  </styled.img>
+                </ImageBox>
+                <styled.div>
+                  <div
+                    className="sc-htpNat bVroIG"
+                  >
+                    Kinthony Nozzlebooster
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </GnomeBox>
         </div>
       </styled.div>
     </div>

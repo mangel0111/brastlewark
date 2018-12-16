@@ -65,6 +65,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
+    "test:coverage": "npm test -- --coverage",
     "jest": "jest --config=jestconfig.json",
     "eject": "react-scripts eject"
   },
@@ -84,9 +85,10 @@
       "react-app"
     ]
   },
-  "jest": {
+  "jest":{
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
+      "src/**/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
     ],
     "resolver": "jest-pnp-resolver",
@@ -128,5 +130,5 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
-  }
+  } 
 }

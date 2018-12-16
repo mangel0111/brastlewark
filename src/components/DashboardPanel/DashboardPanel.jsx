@@ -38,7 +38,6 @@ const Filter = styled.div`
 `;
 
 export class DashboardPanel extends Component {
-	
 	constructor(props){
 		super(props);
 		this.state = {
@@ -49,7 +48,6 @@ export class DashboardPanel extends Component {
 	filter(){
 		const { gnomes }= this.props;
 		const { filterText } = this.state;
-		
 		const gnomesFiltered = gnomes.filter(gnome => {
 			if(filterText){
 				return gnome.name.toLowerCase().includes(filterText.toLowerCase());
@@ -83,7 +81,7 @@ export class DashboardPanel extends Component {
 							key={gnome.id} 
 							gnome={gnome}
 						/>): 
-						<p>No gnome to display</p>
+						<p>No gnomes to display</p>
 					}
 				</GnomesList>
 			</Dashboard>

@@ -23,25 +23,28 @@ describe('Dashboard Panel', ()=> {
 		};
 	});
 	it('should match snaptshot dashboard', () => {
-		const dashboardPanel = mount(<DashboardPanel gnomes={[]} />);
+		const dashboardPanel = mount(<DashboardPanel {...props} />);
 		expect(dashboardPanel).toMatchSnapshot();
 	});
 	it('should render dashboard panel',()=> {
-		// Mount Dashboard with none list of gnomes
+		// Mount Dashboard with none list of gnomes because the normal is that the first time never receive anything because the server was no called yet.
 		const dashboardPanel = mount(<DashboardPanel gnomes={[]}/>);
 		expect(dashboardPanel.find(GnomeBox).length).toEqual(0);
         
-		// Mock the response of the server with 10 gnomes
+		// Mock the response of the server with 10 gnomes, the component will receive these props and validate that the 10 GnomeBox components are rendered.
 		dashboardPanel.setProps(props);
 		expect(dashboardPanel.find(GnomeBox).length).toEqual(10);
         
-		//Get the filter and search with different values, and check the change in the list
+		//Find the filter component.
 		const input = dashboardPanel.find(Input);
+
+		// We mock the user iteration and send to the input an valid change event, and also we validate that the state change accordely, the filter text in the state  and is only one GnomeBox displayed.
 		input.at(0).props().onChange({ target: { value: 'Tobus'}});
 		expect(dashboardPanel.state('filterText')).toEqual('Tobus');
 		dashboardPanel.update();
 		expect(dashboardPanel.find(GnomeBox).length).toEqual(1);  
         
+		// Then we validate the case where I just pass a letter and when we reset the filter to nothing again.
 		input.at(0).props().onChange({ target: { value: 'a'}});
 		expect(dashboardPanel.state('filterText')).toEqual('a');
 		dashboardPanel.update();
